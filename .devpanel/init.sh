@@ -35,6 +35,16 @@ fi
 echo
 time composer -n update --no-dev --no-progress
 
+#== Replace experience_builder.image with canvas.image under themes/contrib directory.
+if [ -d web/themes/contrib ]; then
+  echo
+  echo 'Replacing experience_builder.image with canvas.image in themes/contrib directory.'
+  find web/themes/contrib -type f -exec grep -l "experience_builder\.image" {} \; | while read -r file; do
+    echo "Processing: $file"
+    sed -i 's/experience_builder\.image/canvas.image/g' "$file"
+  done
+fi
+
 #== Create the private files directory.
 if [ ! -d private ]; then
   echo
