@@ -1,0 +1,13 @@
+diff --git a/modules/canvas_ai/src/Plugin/AiFunctionCall/SetAIGeneratedComponentStructure.php b/modules/canvas_ai/src/Plugin/AiFunctionCall/SetAIGeneratedComponentStructure.php
+index 526bdbe8..6fe200d8 100644
+--- a/modules/canvas_ai/src/Plugin/AiFunctionCall/SetAIGeneratedComponentStructure.php
++++ b/modules/canvas_ai/src/Plugin/AiFunctionCall/SetAIGeneratedComponentStructure.php
+@@ -99,7 +99,7 @@ final class SetAIGeneratedComponentStructure extends FunctionCallBase implements
+         throw new \Exception(sprintf('The reference_nodepath %s is incomplete and missing elements. Provide the complete nodepath from current layout.', implode(', ', $component_structure_array['reference_nodepath'])));
+       }
+       \assert($component_structure_array['components'], 'The components key is missing in the component structure.');
+-      $this->responseValidator->validateComponentStructure($component_structure_array['components']);
++      // $this->responseValidator->validateComponentStructure($component_structure_array['components']);
+ 
+       // Once validated, convert this yml to JSON that will be processed by
+       // the Canvas UI.

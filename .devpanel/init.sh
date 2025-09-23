@@ -35,13 +35,13 @@ fi
 echo
 time composer -n update --no-dev --no-progress
 
-#== Replace experience_builder.image with canvas.image under themes/contrib directory.
+#== Replace experience_builder.module with canvas.module under themes/contrib directory.
 if [ -d web/themes/contrib ]; then
   echo
-  echo 'Replacing experience_builder.image with canvas.image in themes/contrib directory.'
-  find web/themes/contrib -type f -exec grep -l "experience_builder\.image" {} \; | while read -r file; do
+  echo 'Replacing experience_builder.module with canvas.module in themes/contrib directory.'
+  find web/themes/contrib -type f -exec grep -l "experience_builder\.module" {} \; | while read -r file; do
     echo "Processing: $file"
-    sed -i 's/experience_builder\.image/canvas.image/g' "$file"
+    sed -i 's/experience_builder\.module/canvas.module/g' "$file"
   done
 fi
 

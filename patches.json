@@ -1,0 +1,7 @@
+{
+  "patches": {
+    "drupal/canvas": {
+      "Disable page builder validations": "patches/canvas-ai-disable-page-builder-validations.patch"
+    }
+  }
+}
