@@ -46,7 +46,7 @@ if [ -d web/themes/contrib ]; then
 fi
 
 #== Comment out validateComponentStructure line in SetAIGeneratedComponentStructure.php inside canvas_ai submodule
-TARGET_FILE="web/modules/canvas/modules/canvas_ai/src/Plugin/AiFunctionCall/SetAIGeneratedComponentStructure.php"
+TARGET_FILE="web/modules/contrib/canvas/modules/canvas_ai/src/Plugin/AiFunctionCall/SetAIGeneratedComponentStructure.php"
 if [ -f "$TARGET_FILE" ]; then
   echo
   echo "Commenting out validateComponentStructure line in $TARGET_FILE"
