@@ -45,15 +45,6 @@ if [ -d web/themes/contrib ]; then
   done
 fi
 
-#== Comment out validateComponentStructure line in SetAIGeneratedComponentStructure.php inside canvas_ai submodule
-TARGET_FILE="web/modules/contrib/canvas/modules/canvas_ai/src/Plugin/AiFunctionCall/SetAIGeneratedComponentStructure.php"
-if [ -f "$TARGET_FILE" ]; then
-  echo
-  echo "Commenting out validateComponentStructure line in $TARGET_FILE"
-  sed -i 's/^\(\s*\)\$this->responseValidator->validateComponentStructure(\$component_structure_array\[.\+\]);/\1\/\/ \0/' "$TARGET_FILE"
-fi
-
-
 #== Create the private files directory.
 if [ ! -d private ]; then
   echo
